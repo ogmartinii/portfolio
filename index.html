@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OGM2</title>
+    <meta name="description" content="OGM2 web development">
+    <meta name="keywords" content="OGM2, web, development">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i,900i" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="css/lightbox.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="index.html" class="ogbutton"></a>
+            <div class="menubutt" id="top">
+                <a href="#biopar" class="biobutton"></a>
+                <a href="#refpar" class="refbutton"></a>
+            </div>
+        </header>
+        <div class="content">
+            <div class="contact">
+                <div class="contact_content">
+                    <p>Martin Slezák</p>
+                    <div class="email"></div>
+                </div>
+            </div>
+            <div class="bio" id="biopar">
+                <div class="bioheadline">
+                    <a href="#refpar" class="arrow"></a>
+
+                </div>
+                <p class="question">Who are you?</p>
+                <p>Full-stack web developer brought up by
+                    <a href="img/doe.jpg" data-lightbox="doe" data-title="Doe" class="does_lightbox"><span class="does">does</span></a>                    with passion for nature and music.</p>
+                <p class="question">A word to define what kind of worker you are?</p>
+                <p>Tireless</p>
+                <p class="question">Are you more of a hunter or a gatherer?</p>
+                <p>Definitely gatherer *looking at neatly organized LPs* </p>
+                <p class="question">What do you work toward in your free time?</p>
+                <p>Becoming the best drummer in the world</p>
+                <p class="question">What kind of music do you listen when you are working?</p>
+                <p>Death Grips</p>
+                <p class="question">In which city are you located?</p>
+                <p>Prague</p>
+            </div>
+            <div class="references" id="refpar">
+                <div class="refheadline"></div>
+                <p class="question">Skills</p>
+                <p>Responsive web development with deep knowledge of HTML5, CSS3, JavaScript, PHP and many more. I am natural
+                    in both frontend and backend situations.</p>
+
+                <p>I have worked on presentation of various bands including posters and web presentation. I also do handicrafts.</p>
+                <div class="thumbs">
+                    <a href="img/posters/poster01.jpg" data-lightbox="thumbs"><img src="img/posters/thumb01.jpg" alt="Inventa Storca poster thumb"></a>
+                    <a href="img/posters/poster02.jpg" data-lightbox="thumbs"><img src="img/posters/thumb02.jpg" alt="Fluid Culture poster thumb"></a>
+                    <a href="img/posters/poster03.jpg" data-lightbox="thumbs"><img src="img/posters/thumb03.jpg" alt="Fluid Culture poster thumb"></a>
+                    <a href="img/posters/poster05.jpg" data-lightbox="thumbs"><img src="img/posters/thumb05.jpg" alt="Fluid Culture poster thumb"></a>
+                    <a href="img/posters/poster06.jpg" data-lightbox="thumbs"><img src="img/posters/thumb06.jpg" alt="Fluid Culture poster thumb"></a>
+                </div>
+                <p>I want to work on interesting projects implementing the newest trends and standards.</p>
+                <p>I also make music:</p>
+                <div class="bandcampwrap">
+                <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3773288713/size=small/bgcol=ffffff/linkcol=333333/transparent=true/" class="bandcamp"></iframe>
+                <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1797872317/size=small/bgcol=ffffff/linkcol=333333/transparent=true/" class="bandcamp"></iframe>
+                </div>
+                <p>Strange Fetish - <a href="http://www.inventastorca.cz" target="_blank">Planeta Fetish [Hoření Opic]</a></p>
+            </div>
+        </div>
+        <footer>
+            <p><a href="#top">&copy; 2016 OGM2</a></p>
+        </footer>
+    </div>
+
+    <script>
+        $('a[href*="#"]:not([href="#"])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+        $(window).on("scroll", function (event) {
+            //console.log($(window).scrollTop());
+            if ($(window).scrollTop() <= 165) {
+                $('header .ogbutton').css({
+                    'top': 35 + $(window).scrollTop() + 'px'
+                });
+            }
+        });
+        $(window).on("scroll", function (event) {
+            //console.log($(window).scrollTop());
+            if ($(window).scrollTop() <= 165) {
+                $('header .biobutton').css({
+                    'top': 153 + $(window).scrollTop() + 'px'
+                });
+            }
+        });
+        $(window).on("scroll", function (event) {
+            //console.log($(window).scrollTop());
+            if ($(window).scrollTop() <= 165) {
+                $('header .refbutton').css({
+                    'top': 153 + $(window).scrollTop() + 'px'
+                });
+            }
+        });
+
+    </script>
+
+<script src="js/lightbox.js"></script>
+</body>
+
+</html>
